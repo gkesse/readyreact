@@ -1,0 +1,24 @@
+{
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "git",
+                    "style": "plain",
+                    "properties": {
+                        "display_status": false,
+                        "display_stash_count": false,
+                        "display_upstream_icon": false,
+                        "display_tag": false,
+                        "display_commits": false,
+                        "display_worktree": false,
+                        "template": "{{ .UserName }} ({{ .Branch }})"
+                    }
+                }
+            ]
+        }
+    ],
+    "final_space": true
+}
