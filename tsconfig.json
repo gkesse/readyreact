@@ -1,6 +1,13 @@
 {
-  "extends": "expo/tsconfig.base",
-  "compilerOptions": {
-    "strict": true
-  }
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+        "strict": true,
+        "ignoreDeprecations": "6.0",
+        "types": ["jest", "react-native"],
+        "baseUrl": ".",
+        "paths": {
+            "@app/*": ["app/*"],
+            "@tests/*": ["tests/*"]
+        }
+    }
 }
