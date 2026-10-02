@@ -20,3 +20,15 @@ repos:
             entry: npx eslint
             language: system
             files: \.(js|jsx|ts|tsx)$
+
+          - id: readyreact-commit-msg-check
+            name: ReadyReact Commit Message Check
+            entry: python hooks/commit-msg/readyreact-commit-msg-check.py
+            language: system
+            stages: [commit-msg]
+
+          - id: readyreact-protect-main
+            name: ReadyReact Protect Main Branch
+            entry: python hooks/pre-commit/readyreact-protect-main.py
+            language: system
+            pass_filenames: false
