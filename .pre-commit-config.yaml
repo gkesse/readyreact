@@ -9,26 +9,39 @@ repos:
 
     - repo: local
       hooks:
-          - id: readyreact-typescript-check
+          - id: readyreact-typescript
             name: ReadyReact TypeScript Check
             entry: npx tsc --noEmit
             language: system
             pass_filenames: false
 
-          - id: readyreact-eslint-check
+          - id: readyreact-eslint
             name: ReadyReact ESLint Check
-            entry: npx eslint
+            entry: npx eslint --fix
             language: system
             files: \.(js|jsx|ts|tsx)$
 
-          - id: readyreact-commit-msg-check
+          - id: readyreact-commit-msg
             name: ReadyReact Commit Message Check
-            entry: python hooks/commit-msg/readyreact-commit-msg-check.py
+            entry: python hooks/commit-msg/readyreact-commit-msg.py
             language: system
             stages: [commit-msg]
 
           - id: readyreact-protect-main
-            name: ReadyReact Protect Main Branch
+            name: ReadyReact Protect Main Branch Check
             entry: python hooks/pre-commit/readyreact-protect-main.py
             language: system
             pass_filenames: false
+
+          - id: readyreact-prettier
+            name: ReadyReact Prettier Check
+            entry: npx prettier --write --ignore-unknown
+            language: system
+            files: \.(js|jsx|ts|tsx|json|css|scss|md|yaml|yml)$
+
+          - id: readyreact-tests
+            name: ReadyReact Tests Check
+            entry: npm test -- --runInBand --watch=false
+            language: system
+            pass_filenames: false
+            files: \.(js|jsx|ts|tsx)$
