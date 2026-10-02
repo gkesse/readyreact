@@ -8,3 +8,4 @@
 .expo/
 tmp/
 node_modules/
+.venv/
