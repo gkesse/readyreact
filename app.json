@@ -2,6 +2,7 @@
     "expo": {
         "name": "readyreact",
         "slug": "readyreact",
+        "scheme": "readyreact",
         "version": "1.0.0",
         "orientation": "portrait",
         "icon": "./assets/icon.png",
