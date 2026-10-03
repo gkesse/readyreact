@@ -44,4 +44,4 @@ repos:
             entry: npm test -- --runInBand --watch=false
             language: system
             pass_filenames: false
-            files: \.(js|jsx|ts|tsx)$
+            files: \.(js|jsx|ts|tsx|json|css|scss|md|yaml|yml)$
