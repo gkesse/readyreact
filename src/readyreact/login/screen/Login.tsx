@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { View, TextInput, Button, Alert, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
+import { LoginData } from '../model/Login';
+import { LoginService } from '../service/Login';
 
 export default function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const login_service = new LoginService();
+    const [login_data, setLoginData] = useState(new LoginData());
 
     const handleLogin = () => {
-        if (username === 'admin' && password === '1234') {
+        if (login_service.isLogin(login_data)) {
             router.replace('/admin');
         } else {
             Alert.alert('Erreur', 'Identifiants incorrects');
@@ -18,16 +20,16 @@ export default function Login() {
         <View style={styles.container}>
             <TextInput
                 placeholder="Utilisateur"
-                value={username}
-                onChangeText={setUsername}
+                value={login_data.m_username}
+                onChangeText={(text) => setLoginData({ ...login_data, m_username: text })}
                 style={styles.input}
             />
 
             <TextInput
                 placeholder="Mot de passe"
                 secureTextEntry
-                value={password}
-                onChangeText={setPassword}
+                value={login_data.m_password}
+                onChangeText={(text) => setLoginData({ ...login_data, m_password: text })}
                 style={styles.input}
             />
 

@@ -4,7 +4,7 @@ import { View, Button, StyleSheet } from 'react-native';
 export default function Home() {
     return (
         <View style={styles.container}>
-            <Button title="Accéder au Login" onPress={() => router.push('/login')} />
+            <Button title="Connexion" onPress={() => router.push('/login')} />
         </View>
     );
 }
