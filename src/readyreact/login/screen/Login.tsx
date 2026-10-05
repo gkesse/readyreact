@@ -8,7 +8,7 @@ export default function Login() {
     const login_service = new LoginService();
     const [login_data, setLoginData] = useState(new LoginData());
 
-    const handleLogin = () => {
+    const onLogin = () => {
         if (login_service.isLogin(login_data)) {
             router.replace('/admin');
         } else {
@@ -33,7 +33,7 @@ export default function Login() {
                 style={styles.input}
             />
 
-            <Button title="Connexion" onPress={handleLogin} />
+            <Button title="Connexion" onPress={onLogin} />
         </View>
     );
 }
