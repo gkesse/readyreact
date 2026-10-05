@@ -45,3 +45,9 @@ repos:
             language: system
             pass_filenames: false
             files: \.(js|jsx|ts|tsx|json|css|scss|md|yaml|yml)$
+
+          - id: readyreact-git-guardian
+            name: ReadyReact GitGuardian Check
+            entry: ggshield secret scan pre-commit
+            language: system
+            pass_filenames: false
